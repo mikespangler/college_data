@@ -1,4 +1,5 @@
 from django.db import models
+# from IPython import embed
 
 class College(models.Model):
 
@@ -15,7 +16,7 @@ class College(models.Model):
   updated_at = models.DateTimeField(auto_now=True) # set every time it's updated
   grad_enrollment = models.IntegerField(default=None, blank=True)
   undergrad_enrollment = models.IntegerField(default=None, blank=True)
-  location = models.CharField(max_length=100)
+  location = models.CharField(max_length=150)
   setting  = models.CharField(max_length=100)
   admit_rate = models.IntegerField()
   lchs_gpa = models.FloatField()
@@ -37,4 +38,4 @@ class Interview(models.Model):
   updated_at = models.DateTimeField(auto_now=True) # set every time it's updated
 
   def __str__(self):
-    return self.college.__str__
+    return self.college.name
